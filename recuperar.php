@@ -1,5 +1,5 @@
 <?php  
-/** Interfaz de recuperación de contrasena.
+/** Interfaz de recuperación de contraseña.
  * Flujo:
  *   1. El usuario ingresa su correo y solicita un código.
  *   2. Ingresa el código (4 dígitos, vigencia 10 min) + nueva contraseña.
