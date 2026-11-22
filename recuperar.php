@@ -54,11 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $clave2    = $_POST['contrasena2'] ?? '';
 
             if (!$idUsuario) {
-                $error = 'No hay una solicitud de recuperacion activa.';
+                $error = 'No hay una solicitud de recuperación activa.';
             } elseif (!preg_match('/^\d{4}$/', $codigo)) {
                 $error = 'El codigo debe tener 4 digitos.';
             } elseif (strlen($clave) < 6) {
-                $error = 'La nueva contrasena debe tener al menos 6 caracteres.';
+                $error = 'La nueva contraseña debe tener al menos 6 caracteres.';
             } elseif ($clave !== $clave2) {
                 $error = 'Las contrasenas no coinciden.';
             } elseif (!verificar_codigo((int) $idUsuario, $codigo, 'recuperacion')) {
@@ -81,7 +81,7 @@ $email = $_SESSION['recup']['email'] ?? $email;
 $codigoDev = $_SESSION['recup']['codigo_dev'] ?? null;
 
 // Encabezado de la pagina
-$tituloPagina = 'Recuperar contrasena';
+$tituloPagina = 'Recuperar contraseña';
 $mostrarBarra = false;
 require __DIR__ . '/includes/header.php';
 ?>
@@ -89,7 +89,7 @@ require __DIR__ . '/includes/header.php';
 <div class="contenedor-estrecho">
     <div class="caja-acceso">
         <div class="encabezado-acceso">
-            <h1>Recuperar contrasena</h1>
+            <h1>Recuperar contraseña</h1>
         </div>
 
         <?php if ($error): ?>
@@ -108,12 +108,12 @@ require __DIR__ . '/includes/header.php';
                 <?= csrf_campo() ?>
                 <input type="hidden" name="accion" value="enviar_codigo">
                 <div class="campo">
-                    <label for="email">Correo electronico registrado <span class="obligatorio">*</span></label>
+                    <label for="email">Correo electrónico registrado <span class="obligatorio">*</span></label>
                     <input type="email" id="email" name="email" value="<?= e($email) ?>" required autofocus>
                 </div>
                 <div class="barra-botones">
-                    <button type="submit" class="btn btn-primario">Enviar codigo de recuperacion</button>
-                    <a class="btn btn-secundario" href="<?= e(url('index.php')) ?>">Volver al inicio de sesion</a>
+                    <button type="submit" class="btn btn-primario">Enviar código de recuperación</button>
+                    <a class="btn btn-secundario" href="<?= e(url('index.php')) ?>">Volver al inicio de sesión</a>
                 </div>
             </form>
         
@@ -144,7 +144,7 @@ require __DIR__ . '/includes/header.php';
         <?php endif; ?>
 
         <div class="enlaces-acceso">
-            <a href="<?= e(url('index.php')) ?>">Volver al inicio de sesion</a>
+            <a href="<?= e(url('index.php')) ?>">Volver al inicio de sesión</a>
         </div>
     </div>
 </div>
