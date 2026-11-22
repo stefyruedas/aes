@@ -228,7 +228,7 @@ require __DIR__ . '/../includes/header.php';
         </div>
     </div>
 
-// Formulario para agregar o editar productos
+<!-- Formulario para agregar o editar productos -->
     <div class="tarjeta">
         <h2><?= $editar ? 'Editar producto' : 'Agregar producto' ?></h2>
         <?php $val = fn($k, $d = '') => e($_POST[$k] ?? ($editar[$k] ?? $d)); ?>
