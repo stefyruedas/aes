@@ -86,23 +86,23 @@ require __DIR__ . '/includes/header.php';
         <form method="post" novalidate>
             <?= csrf_campo() ?>
             <div class="campo">
-                <label for="usuario">Usuario o correo electronico <span class="obligatorio">*</span></label>
+                <label for="usuario">Usuario o correo electrónico <span class="obligatorio">*</span></label>
                 <input type="text" id="usuario" name="usuario" value="<?= e($usuarioIngresado) ?>"
                        autocomplete="username" required autofocus>
             </div>
              <div class="campo">
-                <label for="contrasena">Contrasena <span class="obligatorio">*</span></label>
+                <label for="contrasena">Contraseña <span class="obligatorio">*</span></label>
                 <input type="password" id="contrasena" name="contrasena" autocomplete="current-password" required>
             </div>
 
             <div class="barra-botones">
-                <button type="submit" class="btn btn-primario">Iniciar sesion</button>
+                <button type="submit" class="btn btn-primario">Iniciar sesión</button>
                 <a class="btn btn-secundario" href="<?= e(url('registro.php')) ?>">Registrarse</a>
             </div>
         </form>
 
         <div class="enlaces-acceso">
-            <a href="<?= e(url('recuperar.php')) ?>">Recuperar contrasena</a>
+            <a href="<?= e(url('recuperar.php')) ?>">Recuperar contraseña</a>
         </div>
 
         <!-- Muestra información de prueba para facilitar el desarrollo.
